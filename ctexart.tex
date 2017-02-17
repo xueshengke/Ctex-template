@@ -17,6 +17,10 @@
 %\usepackage{charter}
 %\usepackage{helvet}
 
+%% if you want to remove all changes commands in tex file, use "delcmdchanges.bash [-i] [-h] <inputfile> <outputfile>"
+\usepackage[draft]{changes}		% draft or final
+\definechangesauthor[name={Xue Shengke}, color=orange]{XSK}
+
 \usepackage{amsmath, amsfonts, amssymb}	% math equations, symbols
 \usepackage[english]{babel}
 \usepackage{color}		% color content
@@ -61,6 +65,8 @@
 	\maketitle
 	\thispagestyle{fancy}
 	
+%	\listofchanges
+	
 \section{章节 Section} \label{sec:one}
 	this is the Section \ref{sec:one}
 	输入中文内容 Your text goes here. \\
@@ -69,6 +75,13 @@
 	abcdefghijklmnopqrstuvwxyz \\
 	The quick brown fox jumps over the lazy dog.\\
 	1234567890
+	
+	This is \added[XSK]{new} text.
+	This is \deleted[XSK][obsolete]{bad} text.
+	This is \replaced[XSK]{nice}{bad} text.
+
+	\listofchanges
+	
 	\begin{align}
 		& ABCDEFGHIJKLMNOPQRSTUVWXYZ \label{eq:alphabet} \\
 		& abcdefghijklmnopqrstuvwxyz \\
